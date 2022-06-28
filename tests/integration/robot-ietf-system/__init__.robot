@@ -8,7 +8,7 @@ Resource            SystemInit.resource
 Suite Setup         Setup IETF Interfaces
 Suite Teardown      Cleanup IETF Interfaces
 
-Test Teardown       Restore Initial Running Datastore
+#Test Teardown       Restore Initial Running Datastore
 
 *** Variables ***
 ${Xpath System}     /ietf-system:system
@@ -26,7 +26,7 @@ Setup IETF Interfaces
 Start Plugin
     ${Plugin}=    Start Process    %{SYSREPO_GENERAL_PLUGIN_PATH}
     Set Suite Variable    ${Plugin}
-    Wait For Process    ${Plugin}    timeout=2s    on_timeout=continue
+    Wait For Process    ${Plugin}    timeout=3s    on_timeout=continue
 
 Init Running Session
     ${Session Running}=    Open Datastore Session    ${Connection Default}    ${Running Datastore}

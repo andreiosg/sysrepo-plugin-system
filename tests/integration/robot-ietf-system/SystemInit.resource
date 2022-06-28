@@ -17,7 +17,7 @@ Check If Datastore Is Restored
     ${Restored}=    Get Datastore Data
     ...    ${Connection Default}
     ...    ${Session Running}
-    ...    ${Xpath Routing}
+    ...    ${Xpath System}
     ...    json
     Should Be Equal As Strings    ${Restored}    ${If Init Str}    msg="failed to restore inital running datastore"
 
